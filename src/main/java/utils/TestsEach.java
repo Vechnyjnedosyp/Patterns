@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-public class TestsAll {
+public class TestsEach {
 
     @BeforeEach
     public void setUp() {

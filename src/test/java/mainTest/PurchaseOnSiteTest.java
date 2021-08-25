@@ -1,15 +1,17 @@
+package mainTest;
+
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import pages.*;
-import utils.TestsAll;
+import utils.TestsEach;
 
 import java.io.IOException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class PurchaseOnSiteTest extends TestsAll {
+public class PurchaseOnSiteTest extends TestsEach {
 
     @Test
     @DisplayName("User login on website.")
@@ -54,8 +56,8 @@ public class PurchaseOnSiteTest extends TestsAll {
     @Test
     @DisplayName("User remove an item from the shopping cart.")
     public void removeItem() throws IOException {
-        LoginPage loginPage = new LoginPage()
-                .openLoginPage()
+        LoginPage loginPage = new LoginPage();
+        loginPage.openLoginPage()
                 .login();
         ProductsPage productsPage = new ProductsPage();
         productsPage.addItem()
@@ -70,8 +72,8 @@ public class PurchaseOnSiteTest extends TestsAll {
     @Test
     @DisplayName("Check to correct the summary cost of a shopping cart.")
     public void checkSum() throws IOException {
-        LoginPage loginPage = new LoginPage()
-                .openLoginPage()
+        LoginPage loginPage = new LoginPage();
+        loginPage.openLoginPage()
                 .login();
         ProductsPage productsPage = new ProductsPage();
         productsPage
