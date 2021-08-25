@@ -1,3 +1,5 @@
+package pages;
+
 import com.codeborne.selenide.SelenideElement;
 
 import java.io.FileInputStream;
@@ -12,7 +14,7 @@ public class LoginPage {
     SelenideElement loginField = $("#user-name");
     SelenideElement passwordField = $("#password");
     SelenideElement buttonLogin = $("input[class='submit-button btn_action']");
-    SelenideElement titleHeader = $("span[class = 'title']");
+    public SelenideElement titleHeader = $("span[class = 'title']");
 
     public LoginPage login() throws IOException {
         Properties props = new Properties();

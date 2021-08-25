@@ -1,3 +1,5 @@
+package pages;
+
 import com.codeborne.selenide.SelenideElement;
 
 import java.io.FileInputStream;
@@ -13,12 +15,13 @@ public class CheckoutInfoPage extends LoginPage {
     SelenideElement postalCodeField = $("#postal-code");
     SelenideElement continueButton = $("#continue");
 
-    public void enterInfo() throws IOException {
+    public CheckoutInfoPage enterInfo() throws IOException {
         Properties props = new Properties();
         props.load(new FileInputStream("src/main/resources/checkoutInfo.properties"));
         firstNameField.sendKeys(props.getProperty("checkoutInfo.firstName"));
         lastNameField.sendKeys(props.getProperty("checkoutInfo.lastName"));
         postalCodeField.sendKeys(props.getProperty("checkoutInfo.postalCode"));
         continueButton.click();
+        return this;
     }
 }
