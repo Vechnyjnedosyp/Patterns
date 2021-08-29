@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         tags = "@test",
         snippets = CucumberOptions.SnippetType.CAMELCASE)
-public class Runner {
+public class RunnerTest {
 
 }
 
