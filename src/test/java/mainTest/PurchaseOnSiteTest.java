@@ -15,7 +15,7 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Test
     @DisplayName("User login on website.")
-    public void userLogin() throws IOException {
+    public void testUserLogin() throws IOException {
         LoginPage loginPage = new LoginPage();
         loginPage.openLoginPage()
                 .login()
@@ -26,7 +26,7 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Test
     @DisplayName("User add an item to the shopping cart.")
-    public void addItem() throws IOException {
+    public void testAddItem() throws IOException {
         LoginPage loginPage = new LoginPage();
         loginPage.openLoginPage()
                 .login();
@@ -37,7 +37,7 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Test
     @DisplayName("User cancel his purchase.")
-    public void cancelPurchase() throws IOException {
+    public void testCancelPurchase() throws IOException {
         LoginPage loginPage = new LoginPage()
                 .openLoginPage()
                 .login();
@@ -55,7 +55,7 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Test
     @DisplayName("User remove an item from the shopping cart.")
-    public void removeItem() throws IOException {
+    public void testRemoveItem() throws IOException {
         LoginPage loginPage = new LoginPage();
         loginPage.openLoginPage()
                 .login();
@@ -71,7 +71,7 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Test
     @DisplayName("Check to correct the summary cost of a shopping cart.")
-    public void checkSum() throws IOException {
+    public void testCheckSum() throws IOException {
         LoginPage loginPage = new LoginPage();
         loginPage.openLoginPage()
                 .login();
