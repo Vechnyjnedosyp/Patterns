@@ -4,7 +4,7 @@
 @test @param
 Функционал: Параметризированный запуск тестов
 
-  Структура сценария: Проверка логирования на сайте "https://www.saucedemo.com/inventory.html"
+  Структура сценария: Проверка логирования на сайте
     Допустим открыта страница "https://www.saucedemo.com/"
     И в строку 'Username' введено значение "<Username>"
     А в строку 'Password' введено значение "<Password>"
@@ -12,5 +12,5 @@
     Тогда откроется страница с товарами "<Title>"
 
     Примеры:
-      | Username      | Password     | Title    | Button    |
-      | standard_user | secret_sauce | PRODUCTS | login     |
+      | Username      | Password     | Title    | Button           |
+      | standard_user | secret_sauce | PRODUCTS | login-button     |

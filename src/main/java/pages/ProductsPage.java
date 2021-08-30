@@ -9,12 +9,12 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ProductsPage extends LoginPage {
 
-    String addToCartButton = "button[class = 'btn btn_primary btn_small btn_inventory']";
-    String itemDescription = "div[class = 'inventory_item_description']";
-    SelenideElement tableBody = $("div[class = 'inventory_list']");
+    public String addToCartButton = "button[class = 'btn btn_primary btn_small btn_inventory']";
+    public String itemDescription = "div[class = 'inventory_item_description']";
+    public SelenideElement tableBody = $("div[class = 'inventory_list']");
     public SelenideElement cartLink = $("a[class = 'shopping_cart_link']");
-    int sizeItemCollection = 0;
-    int numberOfItems = 0;
+    public int sizeItemCollection = 0;
+    public int numberOfItems = 0;
 
     public ProductsPage addItem() {
         tableBody.shouldBe(Condition.visible);

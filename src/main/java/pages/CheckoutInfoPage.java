@@ -17,7 +17,7 @@ public class CheckoutInfoPage extends LoginPage {
 
     public CheckoutInfoPage enterInfo() throws IOException {
         Properties props = new Properties();
-        props.load(new FileInputStream("src/main/resources/checkoutInfo.properties"));
+        props.load(new FileInputStream("src/main/resources/properties/checkoutInfo.properties"));
         firstNameField.sendKeys(props.getProperty("checkoutInfo.firstName"));
         lastNameField.sendKeys(props.getProperty("checkoutInfo.lastName"));
         postalCodeField.sendKeys(props.getProperty("checkoutInfo.postalCode"));
