@@ -1,6 +1,5 @@
 package steps;
 
-import com.codeborne.selenide.Selenide;
 import io.cucumber.java.ru.Допустим;
 import io.cucumber.java.ru.Затем;
 import io.cucumber.java.ru.Тогда;
@@ -55,7 +54,8 @@ public class Steps {
         for (int i = 0; i < x; i++){
             productsPage.addItem();
         }
-        Selenide.sleep(3000);
+        System.out.println("productsPage.numberOfItems " + productsPage.numberOfItems);
+        System.out.println("productsPage.sizeItemCollection " + productsPage.sizeItemCollection);
     }
 
     @Тогда("^в корзине находится \"([^\"]*)\" товар$")

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@test",
+        tags = "@cart",
         snippets = CucumberOptions.SnippetType.CAMELCASE)
 public class RunnerTest {
 
