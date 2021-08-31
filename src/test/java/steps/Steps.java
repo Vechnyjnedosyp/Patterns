@@ -5,6 +5,7 @@ import io.cucumber.java.ru.Затем;
 import io.cucumber.java.ru.Тогда;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.By;
 import pages.CheckoutInfoPage;
 import pages.CheckoutOverviewPage;
@@ -18,7 +19,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Steps {
 
     @Step

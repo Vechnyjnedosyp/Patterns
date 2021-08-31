@@ -6,9 +6,8 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 import org.openqa.selenium.OutputType;
-import utils.TestsEach;
 
-public class Hooks extends TestsEach {
+public class Hooks {
 
     @Before
     public void beforeTest(Scenario scenario) {
