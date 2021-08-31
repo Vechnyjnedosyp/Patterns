@@ -1,6 +1,7 @@
 package utils;
 
 import com.codeborne.selenide.Configuration;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -11,6 +12,7 @@ public class TestsEach {
     @BeforeEach
     public void setUp() {
         Configuration.startMaximized = true;
+        Configuration.reportsFolder = "test-result/reports";
     }
 
     @AfterEach

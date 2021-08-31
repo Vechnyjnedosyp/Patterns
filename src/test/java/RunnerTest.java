@@ -7,8 +7,12 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@cart",
+        tags = "@test",
+        plugin = {"pretty", "html:test-output",
+                "json:target/cucumber-reports/cucumber.json"
+        },
         snippets = CucumberOptions.SnippetType.CAMELCASE)
+
 public class RunnerTest {
 
 }

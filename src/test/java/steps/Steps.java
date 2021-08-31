@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.ru.Допустим;
 import io.cucumber.java.ru.Затем;
 import io.cucumber.java.ru.Тогда;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import pages.CheckoutInfoPage;
@@ -17,8 +18,10 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 public class Steps {
 
+    @Step
     @Допустим("^открыта страница \"([^\"]*)\"$")
     public void openPage(String pageURL) {
         open(pageURL);
@@ -26,27 +29,32 @@ public class Steps {
         assertEquals(pageURL, currentPageURL, "Значения ссылок не сопадают");
     }
 
+    @Step
     @Допустим("^в строку 'Username' введено значение \"([^\"]*)\"$")
     public void enterUsername(String text) {
         $("#user-name").setValue(text);
     }
 
+    @Step
     @Допустим("^в строку 'Password' введено значение \"([^\"]*)\"$")
     public void enterPassword(String text) {
         $("#password").setValue(text);
     }
 
+    @Step
     @Допустим("^нажата кнопка \"([^\"]*)\"$")
     public void clickOnButton(String button) {
         $(By.id(button)).click();
     }
 
+    @Step
     @Тогда("^откроется страница с товарами \"([^\"]*)\"$")
     public void checkLinkName(String title) {
         String actualTitle = $(By.cssSelector("span[class = 'title']")).getText();
         assertEquals(title, actualTitle, "Названия заголовков не совпадают");
     }
 
+    @Step
     @Допустим("^добавлен \"([^\"]*)\" товар в корзину$")
     public void addItem(String num) {
         ProductsPage productsPage = new ProductsPage();
@@ -54,21 +62,22 @@ public class Steps {
         for (int i = 0; i < x; i++){
             productsPage.addItem();
         }
-        System.out.println("productsPage.numberOfItems " + productsPage.numberOfItems);
-        System.out.println("productsPage.sizeItemCollection " + productsPage.sizeItemCollection);
     }
 
+    @Step
     @Тогда("^в корзине находится \"([^\"]*)\" товар$")
     public void checkCart(String numItem) {
         String actualNum = $(By.cssSelector("span[class = 'shopping_cart_badge']")).getText();
         assertEquals(numItem, actualNum);
     }
 
+    @Step
     @Допустим("^нажата ссылка \"([^\"]*)\"$")
     public void clickOnLink(String link) {
         $(By.cssSelector("a[class = '" + link +"_link'")).click();
     }
 
+    @Step
     @Затем("^удален \"([^\"]*)\" товар из корзины$")
     public void removeItem(String num) {
         UserCartPage userCartPage = new UserCartPage();
@@ -78,18 +87,21 @@ public class Steps {
         }
     }
 
+    @Step
     @Допустим("^вводится информация$")
     public void enterInfo() throws IOException {
         CheckoutInfoPage checkoutInfoPage = new CheckoutInfoPage();
         checkoutInfoPage.enterInfo();
     }
 
+    @Step
     @Тогда("^отменяется покупка$")
     public void cancelPurchase() {
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
         checkoutOverviewPage.cancelButton.click();
     }
 
+    @Step
     @Тогда("^в корзине осталось \"([^\"]*)\" товаров$")
     public void afterCheckCart(String numItem) {
         UserCartPage userCartPage = new UserCartPage();
@@ -97,6 +109,7 @@ public class Steps {
         assertEquals(numItem, actualNum);
     }
 
+    @Step
     @Тогда("^проверяется точность итоговой суммы до налогообложения$")
     public void checkSum() {
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
