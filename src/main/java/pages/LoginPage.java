@@ -18,7 +18,7 @@ public class LoginPage {
 
     public LoginPage login() throws IOException {
         Properties props = new Properties();
-        props.load(new FileInputStream("src/main/resources/user.properties"));
+        props.load(new FileInputStream("src/main/resources/properties/user.properties"));
         loginField.sendKeys(props.getProperty("user.username"));
         passwordField.sendKeys(props.getProperty("user.password"));
         buttonLogin.click();

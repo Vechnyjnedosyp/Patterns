@@ -1,6 +1,7 @@
-package mainTest;
-
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Screenshots;
+import com.google.common.io.Files;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,11 +9,19 @@ import org.junit.jupiter.api.TestInstance;
 import pages.*;
 import utils.TestsEach;
 
+import java.io.File;
 import java.io.IOException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PurchaseOnSiteTest extends TestsEach {
+    
 
+    @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
+    @Feature(value = "Tests for task 6")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
+    @Story(value = "Test for login with correct credentials")
+    @Step
     @Test
     @DisplayName("User login on website.")
     public void testUserLogin() throws IOException {
@@ -24,6 +33,12 @@ public class PurchaseOnSiteTest extends TestsEach {
                 "It's not products page");
     }
 
+    @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
+    @Feature(value = "Tests for task 6")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
+    @Story(value = "Test for login with correct credentials")
+    @Step
     @Test
     @DisplayName("User add an item to the shopping cart.")
     public void testAddItem() throws IOException {
@@ -35,6 +50,12 @@ public class PurchaseOnSiteTest extends TestsEach {
         Assertions.assertEquals("1", productsPage.cartLink.getText());
     }
 
+    @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
+    @Feature(value = "Tests for task 6")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
+    @Story(value = "Test for login with correct credentials")
+    @Step
     @Test
     @DisplayName("User cancel his purchase.")
     public void testCancelPurchase() throws IOException {
@@ -53,6 +74,12 @@ public class PurchaseOnSiteTest extends TestsEach {
                 "It's not products page");
     }
 
+    @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
+    @Feature(value = "Tests for task 6")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
+    @Story(value = "Test for login with correct credentials")
+    @Step
     @Test
     @DisplayName("User remove an item from the shopping cart.")
     public void testRemoveItem() throws IOException {
@@ -69,6 +96,12 @@ public class PurchaseOnSiteTest extends TestsEach {
         Assertions.assertEquals(0, userCartPage.sizeItemsFromCartAfter);
     }
 
+    @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
+    @Feature(value = "Tests for task 6")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
+    @Story(value = "Test for login with correct credentials")
+    @Step
     @Test
     @DisplayName("Check to correct the summary cost of a shopping cart.")
     public void testCheckSum() throws IOException {
