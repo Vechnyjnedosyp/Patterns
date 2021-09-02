@@ -9,7 +9,6 @@ import org.junit.jupiter.api.TestInstance;
 import pages.*;
 import utils.TestsEach;
 
-import java.io.File;
 import java.io.IOException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -69,7 +68,7 @@ public class PurchaseOnSiteTest extends TestsEach {
         CheckoutInfoPage checkoutInfoPage = new CheckoutInfoPage();
         checkoutInfoPage.enterInfo();
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
-        checkoutOverviewPage.cancelButton.click();
+        checkoutOverviewPage.clickCancel();
         Assertions.assertEquals("PRODUCTS", loginPage.titleHeader.getText(),
                 "It's not products page");
     }

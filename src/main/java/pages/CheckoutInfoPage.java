@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,6 +16,7 @@ public class CheckoutInfoPage extends LoginPage {
     SelenideElement postalCodeField = $("#postal-code");
     SelenideElement continueButton = $("#continue");
 
+    @Step("Fill information in fields")
     public CheckoutInfoPage enterInfo() throws IOException {
         Properties props = new Properties();
         props.load(new FileInputStream("src/main/resources/properties/checkoutInfo.properties"));

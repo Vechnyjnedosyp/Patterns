@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -15,6 +16,7 @@ public class UserCartPage extends LoginPage {
     int numRemovedItems = 0;
     public int sizeItemsFromCartAfter = 0;
 
+    @Step("Click the 'Remove' button to delete an item.")
     public UserCartPage removeItem() {
         ElementsCollection itemsFromCart = itemsCartBody.$$(cartItemDescription);
         sizeItemsFromCartBefore = itemsFromCart.size();

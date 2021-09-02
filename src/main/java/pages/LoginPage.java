@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,6 +17,7 @@ public class LoginPage {
     SelenideElement buttonLogin = $("input[class='submit-button btn_action']");
     public SelenideElement titleHeader = $("span[class = 'title']");
 
+    @Step("Fill login fields")
     public LoginPage login() throws IOException {
         Properties props = new Properties();
         props.load(new FileInputStream("src/main/resources/properties/user.properties"));
@@ -25,6 +27,7 @@ public class LoginPage {
         return this;
     }
 
+    @Step("Open login page")
     public LoginPage openLoginPage() {
         open("https://www.saucedemo.com/");
         return this;
