@@ -14,12 +14,12 @@ import java.io.IOException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PurchaseOnSiteTest extends TestsEach {
-    
+
 
     @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
     @Feature(value = "Tests for task 6")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
+    @Description("In this test we will login with correct credentials. When we logged we see page with products.")
     @Story(value = "Test for login with correct credentials")
     @Step
     @Test
@@ -35,9 +35,9 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
     @Feature(value = "Tests for task 6")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
-    @Story(value = "Test for login with correct credentials")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("In this test we will add one item in shopping cart. When we added it, a value in shopping cart will be 1. ")
+    @Story(value = "Test opportunity add item in shopping cart")
     @Step
     @Test
     @DisplayName("User add an item to the shopping cart.")
@@ -52,9 +52,9 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
     @Feature(value = "Tests for task 6")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
-    @Story(value = "Test for login with correct credentials")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("In this test we will cancel a purchase. When we canceled a purchase we see page with products.")
+    @Story(value = "Test opportunity cancel a purchase")
     @Step
     @Test
     @DisplayName("User cancel his purchase.")
@@ -76,9 +76,9 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
     @Feature(value = "Tests for task 6")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
-    @Story(value = "Test for login with correct credentials")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("In this test we will remove an item. When we removed it , a value in shopping cart will be 0.")
+    @Story(value = "Test opportunity remove an item in shopping cart")
     @Step
     @Test
     @DisplayName("User remove an item from the shopping cart.")
@@ -98,9 +98,9 @@ public class PurchaseOnSiteTest extends TestsEach {
 
     @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
     @Feature(value = "Tests for task 6")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("In this test we will login with correct credentials. When we logged we see link for file.")
-    @Story(value = "Test for login with correct credentials")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("In this test, we will check the correct subtotal cost of the shopping cart.The sum of all items should be equal to the subtotal cost.")
+    @Story(value = "Test the correct subtotal cost")
     @Step
     @Test
     @DisplayName("Check to correct the summary cost of a shopping cart.")
